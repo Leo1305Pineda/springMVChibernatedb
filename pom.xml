@@ -237,15 +237,5 @@
 
 	<!-- export ANT_OPTS=-Dbuild.sysclasspath=ignore -->
 	
-	<build>
-		<defaultGoal>install</defaultGoal>
-    		<plugins>
-        		<plugin>
-            			<groupId>org.apache.maven.plugins</groupId>
-            			<artifactId>maven-plugin-plugin</artifactId>
-            			<version>3.4</version>
-        		</plugin>
-    		</plugins>
-	</build>
-
+	
 </project>
