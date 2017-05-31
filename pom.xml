@@ -236,5 +236,9 @@
 	</dependencies>
 
 	<!-- export ANT_OPTS=-Dbuild.sysclasspath=ignore -->
+	
+	<build>
+    		<defaultGoal>install</defaultGoal>
+  	</build>
 
 </project>
