@@ -45,7 +45,7 @@ public class StudentDaoImpl extends AbstractHibernateDao<Student> implements Stu
 	public List<Student> getAllStudent() {
 		// TODO Auto-generated method stub
 		List<Student> students = new ArrayList<>();
-		List<Student> studentsAux = sessionFactory.getCurrentSession().createQuery("FROM Student").list();
+		List<Student> studentsAux = sessionFactory.getCurrentSession().createQuery("FROM student").list();
 		for(Student student: studentsAux) students.add(student);
 		return students ;
 	}	
