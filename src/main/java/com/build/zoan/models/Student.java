@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "student")
+@Table(name = "Student")
 public class Student implements Serializable{
 	@Id
 	@Column(name="idStudent")
