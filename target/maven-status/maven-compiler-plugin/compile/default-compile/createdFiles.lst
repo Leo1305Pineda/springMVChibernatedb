@@ -1,7 +1,6 @@
 com/build/zoan/controllers/StudentController.class
 com/build/zoan/dao/impl/StudentDaoImpl.class
 com/build/zoan/services/StudentService.class
-com/build/zoan/MvcConfig.class
 com/build/zoan/dao/StudentDao.class
 com/build/zoan/dao/IOperations.class
 com/build/zoan/models/Student.class

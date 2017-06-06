@@ -7,22 +7,39 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>zoan Maven Webapp</name>
 	<url>http://maven.apache.org</url>
+	
+	 <parent>
+        <groupId>net.wasdev.maven.parent</groupId>
+        <artifactId>java7-parent</artifactId>
+        <version>1.4</version>
+        <relativePath></relativePath>
+    </parent>
 
 	<properties>
-		<java-version>1.8</java-version>
+		<java-version>1.7</java-version>
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
 		<org.springframework.version>4.3.8.RELEASE</org.springframework.version>
 		<org.aspectj-version>1.6.10</org.aspectj-version>
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 		<name.web>zoan</name.web>
-		<tomcat.manager.url>http://localhost:8080/${name.web}</tomcat.manager.url>
+		<!--tomcat.manager.url>http://localhost:8080/${name.web}</tomcat.manager.url>
 		<tomcat.manager.username>tomcat</tomcat.manager.username>
 		<tomcat.manager.password>tomcat</tomcat.manager.password>
 		<appserver.home>${user.home}/server</appserver.home>
 		<appserver.lib>${user.home}/server/lib</appserver.lib>
-		<deploy.path>${user.home}/server/webapps</deploy.path>
+		<deploy.path>${user.home}/server/webapps</deploy.path-->
 	</properties>
+	
+	<dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.geronimo.specs</groupId>
+                <artifactId>geronimo-servlet_3.0_spec</artifactId>
+                <version>1.0</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 	<dependencies>
 
@@ -227,14 +244,66 @@
 		<!-- Test unit -->
 
 		<dependency>
-    			<groupId>junit</groupId>
-    			<artifactId>junit</artifactId>
-    			<version>4.12</version>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+		</dependency>
+
+		<!-- default to bluemix -->
+
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-rs-client</artifactId>
+			<version>3.1.1</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.geronimo.specs</groupId>
+			<artifactId>geronimo-servlet_3.0_spec</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.ws.rs</groupId>
+			<artifactId>javax.ws.rs-api</artifactId>
+			<version>2.0</version>
 		</dependency>
 
 	</dependencies>
 
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<configuration>
+						<failOnMissingWebXml>false</failOnMissingWebXml>
+						<warName>zoan-0.0.1-SNAPSHOT</warName>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>net.wasdev.wlp.maven.plugins</groupId>
+					<artifactId>liberty-maven-plugin</artifactId>
+					<version>1.2.1</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<plugins>
+			<plugin>
+				<groupId>net.wasdev.wlp.maven.plugins</groupId>
+				<artifactId>liberty-maven-plugin</artifactId>
+				<configuration>
+					<configFile>src/main/wlp/server.xml</configFile>
+					<bootstrapProperties>
+						<appLocation>../../../../../${project.build.finalName}</appLocation>
+					</bootstrapProperties>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
 	<!-- export ANT_OPTS=-Dbuild.sysclasspath=ignore -->
-	
-	
+
 </project>

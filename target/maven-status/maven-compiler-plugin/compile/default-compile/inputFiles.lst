@@ -2,7 +2,6 @@
 /home/leo/WorkSpaceSTS/zoan/src/main/java/com/build/zoan/PersistenceConfig.java
 /home/leo/WorkSpaceSTS/zoan/src/main/java/com/build/zoan/dao/impl/AbstractHibernateDao.java
 /home/leo/WorkSpaceSTS/zoan/src/main/java/com/build/zoan/dao/impl/StudentDaoImpl.java
-/home/leo/WorkSpaceSTS/zoan/src/main/java/com/build/zoan/MvcConfig.java
 /home/leo/WorkSpaceSTS/zoan/src/main/java/com/build/zoan/services/StudentService.java
 /home/leo/WorkSpaceSTS/zoan/src/main/java/com/build/zoan/controllers/StudentController.java
 /home/leo/WorkSpaceSTS/zoan/src/main/java/com/build/zoan/dao/StudentDao.java
