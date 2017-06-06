@@ -3,6 +3,6 @@ applications:
  - name: springMVChibernatedb
    random-route: true
    path: target/zoan-0.0.1-SNAPSHOT.war
-   memory: 512M
+   memory: 256M
    instances: 1
-   host: springmvchibernatedb.mybluemix.net
+   host: springmvchibernatedb

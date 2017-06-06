@@ -36,7 +36,7 @@ public class PersistenceConfig {
 		sessionFactory.setDataSource(dataSource());
 		sessionFactory.setPackagesToScan(new String[] { "com.build.zoan.models" });
 		sessionFactory.setHibernateProperties(hibernateProperties());
-
+		
 		return sessionFactory;
 	}
 
@@ -47,7 +47,6 @@ public class PersistenceConfig {
 		dataSource.setUrl(Preconditions.checkNotNull(env.getProperty("jdbc.url")));
 		dataSource.setUsername(Preconditions.checkNotNull(env.getProperty("jdbc.username")));
 		dataSource.setPassword(Preconditions.checkNotNull(env.getProperty("jdbc.password")));
-
 		return dataSource;
 	}
 

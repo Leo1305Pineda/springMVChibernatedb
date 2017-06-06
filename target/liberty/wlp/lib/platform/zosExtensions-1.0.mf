@@ -1,0 +1,12 @@
+Subsystem-ManifestVersion: 1
+Subsystem-SymbolicName: com.ibm.websphere.appserver.zos.extensions-1.0; visibility:=private
+Subsystem-Version: 1.0.1
+Subsystem-Content: com.ibm.websphere.appserver.zos.no.console.extensions-1.0;location:="lib/platform/zosNoConsoleExtensions-1.0.mf";type="osgi.subsystem.feature",
+ com.ibm.ws.zos.command.processing; version="[1,1.0.100)"; os="z/OS"; start-phase:="KERNEL",
+ com.ibm.websphere.appserver.spi.zos.command.processing; location:="dev/spi/ibm/"; type=jar; version="[1.0.0,1.0.100)",
+ com.ibm.websphere.appserver.spi.zos.command.processing_1.0-javadoc.zip; type=file; location:="dev/spi/ibm/javadoc/com.ibm.websphere.appserver.spi.zos.command.processing_1.0-javadoc.zip",
+ com.ibm.ws.zos.channel.console; version="[1,1.0.100)"; os="z/OS";
+IBM-SPI-Package: com.ibm.wsspi.zos.command.processing
+Subsystem-Type: osgi.subsystem.feature
+IBM-Feature-Version: 2
+IBM-ProductID: com.ibm.websphere.appserver
