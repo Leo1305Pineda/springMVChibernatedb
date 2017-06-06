@@ -1,7 +1,0 @@
-
- Index  Count  Time of first Occurrence    Time of last Occurrence     Exception SourceId ProbeId
-------+------+---------------------------+---------------------------+---------------------------
-     0     15   06/06/17 16:18:45:010 VET   06/06/17 17:10:29:656 VET org.springframework.web.util.NestedServletException com.ibm.ws.webcontainer.filter.WebAppFilterManager.invokeFilters 1064
-                                                                            - /home/leo/WorkSpaceSTS/zoan/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_17.06.06_16.18.45.0.log
-                                                                            - /home/leo/WorkSpaceSTS/zoan/target/liberty/wlp/usr/servers/defaultServer/logs/ffdc/ffdc_17.06.06_16.27.31.0.log
-------+------+---------------------------+---------------------------+---------------------------
